@@ -8,15 +8,15 @@ A mobile game built with **React Native** and **Expo** where the user selects a 
 
 ### Start Screen
 
-![Start Screen](./screenshots/start-screen.png)
+<img src="./screenshots/start-screen.png" alt="Start Screen" width="300" />
 
 ### Game Screen
 
-![Game Screen](./screenshots/game-screen.png)
+<img src="./screenshots/game-screen.png" alt="Game Screen" width="300" />
 
 ### Game Over Screen
 
-![Game Over Screen](./screenshots/game-over.png)
+<img src="./screenshots/game-over.png" alt="Game Over Screen" width="300" />
 
 ---
 
