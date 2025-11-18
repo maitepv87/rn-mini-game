@@ -4,9 +4,26 @@ A mobile game built with **React Native** and **Expo** where the user selects a 
 
 ---
 
+## Screenshots
+
+### Start Screen
+
+![Start Screen](./screenshots/start-screen.png)
+
+### Game Screen
+
+![Game Screen](./screenshots/game-screen.png)
+
+### Game Over Screen
+
+![Game Over Screen](./screenshots/game-over.png)
+
+---
+
 ## Features
+
 - Start screen to enter the secret number.
-- Interactive guessing logic with *Higher* and *Lower* buttons.
+- Interactive guessing logic with _Higher_ and _Lower_ buttons.
 - Round counter and guess log displayed in a styled list.
 - Game Over screen with summary and restart option.
 - Custom fonts loaded with `expo-font`.
@@ -15,6 +32,7 @@ A mobile game built with **React Native** and **Expo** where the user selects a 
 ---
 
 ## Tech Stack
+
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.dev/)
 - `react-native-safe-area-context`
@@ -26,19 +44,22 @@ A mobile game built with **React Native** and **Expo** where the user selects a 
 ## Installation & Running
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/maitepv87/rn-mini-game.git
    cd rn-mini-game
    ```
 
 2. Install dependencies:
+
    ```bash
     npm install
     # or
     yarn install
-    ```
+   ```
 
 3. Start the project with Expo:
+
    ```bash
    npm start
    # or
@@ -48,6 +69,7 @@ A mobile game built with **React Native** and **Expo** where the user selects a 
 4. Scan the QR code with the Expo Go app on your mobile device.
 
 ## Project Structure
+
 ```plaintext
 .
 ├── App.js
