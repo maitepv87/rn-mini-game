@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, View, Alert } from "react-native";
+import { StyleSheet, View, Alert, FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 import Title from "../components/ui/Title";
@@ -8,6 +8,7 @@ import InstructionText from "../components/ui/InstructionText";
 
 import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
+import GuessLogItem from "../components/game/GuessLogItem";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -22,20 +23,26 @@ function generateRandomBetween(min, max, exclude) {
 let minBoundary = 1;
 let maxBoundary = 100;
 
-export default function GameScreen({ userNumer, onGameOver }) {
-  const initialGuess = generateRandomBetween(1, 100, userNumer);
+export default function GameScreen({ userNumber, onGameOver }) {
+  const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
+  const [guessRounds, setGuessRounds] = useState([initialGuess]);
 
   useEffect(() => {
-    if (currentGuess === userNumer) {
-      onGameOver();
+    if (currentGuess === userNumber) {
+      onGameOver(guessRounds.length);
     }
-  }, [currentGuess, userNumer, onGameOver]);
+  }, [currentGuess, userNumber, onGameOver]);
+
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []);
 
   const nextGuessHandler = (direction) => {
     if (
-      (direction === "lower" && currentGuess < userNumer) ||
-      (direction === "greater" && currentGuess > userNumer)
+      (direction === "lower" && currentGuess < userNumber) ||
+      (direction === "greater" && currentGuess > userNumber)
     ) {
       Alert.alert("Don't lie!", "You know that this is wrong...", [
         { text: "Sorry!", style: "cancel" },
@@ -56,6 +63,7 @@ export default function GameScreen({ userNumer, onGameOver }) {
     );
 
     setCurrentGuess(newRndNumber);
+    setGuessRounds((prev) => [newRndNumber, ...prev]);
   };
 
   return (
@@ -79,6 +87,20 @@ export default function GameScreen({ userNumer, onGameOver }) {
           </View>
         </View>
       </Card>
+      <View style={styles.listContainer}>
+        <FlatList
+          data={guessRounds}
+          renderItem={(itemData) => (
+            <GuessLogItem
+              roundNumber={guessRounds.length - itemData.index}
+              guess={itemData.item}
+            >
+              {itemData.item}
+            </GuessLogItem>
+          )}
+          keyExtractor={(item) => item}
+        />
+      </View>
     </View>
   );
 }
@@ -96,5 +118,9 @@ const styles = StyleSheet.create({
   },
   instructionText: {
     marginBottom: 12,
+  },
+  listContainer: {
+    flex: 1,
+    padding: 16,
   },
 });

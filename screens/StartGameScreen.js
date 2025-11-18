@@ -4,7 +4,6 @@ import PrimaryButton from "../components/ui/PrimaryButton";
 import Card from "../components/ui/Card";
 import Title from "../components/ui/Title";
 import InstructionText from "../components/ui/InstructionText";
-import Colors from "../constants/colors";
 
 export default function StartGameScreen({ onPickNumber }) {
   const [enteredNumber, setEnteredNumber] = useState("");
@@ -34,7 +33,7 @@ export default function StartGameScreen({ onPickNumber }) {
 
   return (
     <View style={styles.rootContainer}>
-      <Title>Opponent's Guess</Title>
+      <Title>Guess My Number</Title>
       <Card>
         <InstructionText>Enter a number</InstructionText>
         <TextInput
