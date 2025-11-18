@@ -6,17 +6,11 @@ A mobile game built with **React Native** and **Expo** where the user selects a 
 
 ## Screenshots
 
-### Start Screen
-
-<img src="./screenshots/start-screen.png" alt="Start Screen" width="300" />
-
-### Game Screen
-
-<img src="./screenshots/game-screen.png" alt="Game Screen" width="300" />
-
-### Game Over Screen
-
-<img src="./screenshots/game-over.png" alt="Game Over Screen" width="300" />
+<p align="center">
+  <img src="./screenshots/start-screen.png" alt="Start Screen" width="250"/>
+  <img src="./screenshots/game-screen.png" alt="Game Screen" width="250"/>
+  <img src="./screenshots/game-over.png" alt="Game Over Screen" width="250"/>
+</p>
 
 ---
 
